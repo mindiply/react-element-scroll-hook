@@ -1,5 +1,8 @@
 # react-element-scroll-hook
 
+Fork of https://github.com/tomisu/react-element-scroll-hook.git adding typescript types
+and node compatibility for server side rendering.
+
 A react hook to use the scroll information of an element.
 
 ## Install

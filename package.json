@@ -1,8 +1,14 @@
 {
-  "name": "react-element-scroll-hook",
-  "version": "1.0.8",
+  "name": "@bongione/react-element-scroll-hook",
+  "version": "1.1.0",
   "description": "A react hook to use the scroll information of an element",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "types"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tomisu/react-element-scroll-hook.git"
@@ -28,7 +34,19 @@
     "react": "^16.8.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/react": "^16.9.27",
+    "prettier": "^2.0.2",
+    "react": "^16.8.6",
     "react-dom": "^16.8.0",
-    "react": "^16.8.6"
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "build:babel": "babel src --out-dir lib --extensions \".ts\"",
+    "build:types": "tsc",
+    "prepublish": "npm run build:types && npm run build:babel"
   }
 }
