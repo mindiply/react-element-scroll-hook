@@ -7,8 +7,12 @@ import {
   MutableRefObject,
 } from "react";
 
+declare const navigator: {
+  userAgent: string;
+};
+
 // Edge has a bug where scrollHeight is 1px bigger than clientHeight when there's no scroll.
-const isEdge = /Edge\/\d./i.test(navigator.userAgent);
+const isEdge = /Edge\/\d./i.test(typeof navigator !== 'undefined' ? navigator.userAgent : '');
 
 // Small hook to use ResizeOberver if available. This fixes some issues when the component is resized.
 // This needs a polyfill to work on all browsers. The polyfill is not included in order to keep the package light.
